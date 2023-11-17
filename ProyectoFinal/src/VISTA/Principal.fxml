@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="663.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VISTA.PrincipalController">
+    <children>
+        <Label layoutX="36.0" layoutY="16.0" text="ID " textFill="#151515">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="34.0" layoutY="57.0" text="Nombre De Producto" textFill="#151515">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="95.0" text="Fecha De Lote De Producto" textFill="#151515">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="403.0" layoutY="16.0" text="Fecha De Vencimiento Del Producto" textFill="#151515">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="407.0" layoutY="57.0" text="Precio Unitario" textFill="#151515">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtid" layoutX="237.0" layoutY="14.0" />
+        <TextField fx:id="txtnomproduc" layoutX="237.0" layoutY="55.0" />
+        <TextField fx:id="txtprecio_u" layoutX="661.0" layoutY="55.0" prefHeight="26.0" prefWidth="175.0" />
+        <DatePicker fx:id="ven_produc" layoutX="662.0" layoutY="14.0" />
+        <DatePicker fx:id="lot_produc" layoutX="237.0" layoutY="93.0" />
+        <TableView fx:id="tablaproduc" layoutY="272.0" prefHeight="391.0" prefWidth="892.0">
+            <columns>
+                <TableColumn fx:id="colum_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colum_nom" prefWidth="150.4000015258789" text="NOMBRE DE PRODUCTO" />
+                <TableColumn fx:id="colum_felo" minWidth="0.0" prefWidth="231.20001220703125" text="FECHA DE LOTE DE PRODUCTO " />
+                <TableColumn fx:id="colum_feven" prefWidth="243.19992065429688" text="FECHA DE VENCIMIENTO DE PRODUCTO" />
+                <TableColumn fx:id="colum_preciou" minWidth="0.0" prefWidth="172.800048828125" text="PRECIO UNITARIO " />
+            </columns>
+        </TableView>
+        <Button fx:id="btnIngresar" layoutX="430.0" layoutY="93.0" mnemonicParsing="false" onAction="#ingresar" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: brown; -fx-border-color: gray;" text="INGRESAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../IMG/verificar.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+        <Label layoutX="26.0" layoutY="169.0" prefHeight="17.0" prefWidth="89.0" text="Filtrar por:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+        <Label layoutX="32.0" layoutY="205.0" text="ID">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+        <Label layoutX="123.0" layoutY="209.0" text="NOMBRE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+        <Label layoutX="269.0" layoutY="209.0" prefHeight="26.0" prefWidth="135.0" text="FECHA DE LOTE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+        <Label layoutX="462.0" layoutY="209.0" text="FECHA DE VENCIMIENTO">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+        <Label layoutX="756.0" layoutY="205.0" text="PRECIO">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+        <TextField fx:id="txtFiltrarId" layoutX="17.0" layoutY="238.0" onKeyReleased="#filtrarId" prefHeight="25.0" prefWidth="49.0" />
+        <TextField fx:id="txtFiltrarNombre" layoutX="79.0" layoutY="238.0" onKeyReleased="#filtrarNombre" />
+        <TextField fx:id="txtFiltrarLote" layoutX="262.0" layoutY="238.0" onKeyReleased="#filtrarLote" />
+        <TextField fx:id="txtFiltrarVencimiento" layoutX="472.0" layoutY="238.0" onKeyReleased="#filtrarVencimiento" prefHeight="26.0" prefWidth="181.0" />
+        <TextField fx:id="txtFiltrarPrecio" layoutX="711.0" layoutY="238.0" onKeyPressed="#filtrarPrecio" />
+        <Button fx:id="btnPrecioPromedio" layoutX="611.0" layoutY="144.0" mnemonicParsing="false" onAction="#mostrarPrecioPromedio" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: brown; -fx-border-color: gray;" text="PROMEDIO DE PRECIOS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ComboBox fx:id="comboBoxOpciones" layoutX="611.0" layoutY="93.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="161.0" promptText="OPCIONES" style="-fx-background-color: white; -fx-border-color: gray;" />
+      <Button fx:id="btnEliminar" layoutX="430.0" layoutY="144.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="43.0" prefWidth="161.0" style="-fx-background-color: brown; -fx-border-color: gray;" text="     LIMPIAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="38.0" fitWidth="33.0" layoutX="446.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG/borrar%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnVerCarrito" layoutX="274.0" layoutY="144.0" mnemonicParsing="false" onAction="#verCarritoDeCompras" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: brown; -fx-border-color: gray;" text="CARRITO DE COMPRA" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnAgregarCarrito" layoutX="109.0" layoutY="144.0" mnemonicParsing="false" onAction="#agregarAlCarrito" prefHeight="43.0" prefWidth="149.0" style="-fx-background-color: brown; -fx-border-color: gray;" text="AGREGAR AL CARRITO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnMostrarRecibo" layoutX="803.0" layoutY="125.0" mnemonicParsing="false" onAction="#mostrarRecibo" prefHeight="38.0" prefWidth="66.0" style="-fx-background-color: brown; -fx-border-color: gray;" text="RECIBO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+    </children>
+</AnchorPane>
